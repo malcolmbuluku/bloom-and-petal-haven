@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Peace Lily",
+    "description": "The Peace Lily, known for its elegant white flowers, is a popular choice for indoor spaces.",
+    "image": "https://edube.org/uploads/media/default/0001/04/spathiphyllum-peace-lily.jpg",
+    "price": 15,
+    "priceId": "price_1234"
+  },
+  {
+    "name": "Zanzibar Gem",
+    "description": "The Zanzibar Gem, with its glossy green foliage, is a low-maintenance indoor plant perfect for beginners.",
+    "image": "https://edube.org/uploads/media/default/0001/04/zamioculcas-zanzibar-gem.jpg",
+    "price": 20,
+    "priceId": "price_5678"
+  },
+  {
+    "name": "Fiddle Leaf Fig",
+    "description": "A trendy plant with large, glossy leaves that makes a bold statement in any room.",
+    "image": "https://cdn.shopify.com/s/files/1/0150/6262/products/FiddleLeafFig.jpg",
+    "price": 35,
+    "priceId": "price_9012"
+  },
+  {
+    "name": "Snake Plant",
+    "description": "A hardy plant that thrives on neglect, perfect for beginners and air purification.",
+    "image": "https://cdn.shopify.com/s/files/1/0150/6262/products/SnakePlant.jpg",
+    "price": 18,
+    "priceId": "price_3456"
+  },
+  {
+    "name": "Pothos",
+    "description": "Fast-growing trailing plant with heart-shaped leaves, great for hanging baskets or shelves.",
+    "image": "https://cdn.shopify.com/s/files/1/0150/6262/products/Pothos.jpg",
+    "price": 12,
+    "priceId": "price_7890"
+  },
+  {
+    "name": "Monstera Deliciosa",
+    "description": "Known as the Swiss Cheese Plant for its split leaves, a favorite in modern interiors.",
+    "image": "https://cdn.shopify.com/s/files/1/0150/6262/products/Monstera.jpg",
+    "price": 40,
+    "priceId": "price_1122"
+  }
+]
