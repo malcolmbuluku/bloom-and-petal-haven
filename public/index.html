@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Explore a variety of indoor plants for your home or office.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indoor Plants – Bloom & Petal Haven</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #e8f5e9;
+      border-bottom: 2px solid #c8e6c9;
+    }
+    h1 { margin: 0; font-size: 2.5rem; color: #2e7d32; }
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .plant-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .plant-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .price { font-weight: bold; color: #d32f2f; }
+    button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #2e7d32;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    button:hover { background: #1b5e20; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Indoor Plants</h1>
+    <p>Bring nature into your home with our popular indoor plants.</p>
+  </header>
+
+  <main>
+    <section class="plant-card">
+      <h2>Peace Lily</h2>
+      <img src="https://edube.org/uploads/media/default/0001/04/spathiphyllum-peace-lily.jpg" alt="Peace Lily">
+      <p>The Peace Lily, known for its elegant white flowers, is a popular choice for indoor spaces.</p>
+      <p class="price">$15</p>
+      <button onclick="checkout([{ name: 'Peace Lily', price: 15, quantity: 1 }])">Buy Now</button>
+    </section>
+
+    <section class="plant-card">
+      <h2>Zanzibar Gem</h2>
+      <img src="https://edube.org/uploads/media/default/0001/04/zamioculcas-zanzibar-gem.jpg" alt="Zanzibar Gem">
+      <p>The Zanzibar Gem, with its glossy green foliage, is a low-maintenance indoor plant perfect for beginners.</p>
+      <p class="price">$20</p>
+      <button onclick="checkout([{ name: 'Zanzibar Gem', price: 20, quantity: 1 }])">Buy Now</button>
+    </section>
+  </main>
+
+  <script>
+    async function checkout(items) {
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items,
+          successUrl: window.location.origin + '/success',
+          cancelUrl: window.location.origin
+        })
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert('Checkout failed.');
+      }
+    }
+  </script>
+</body>
+</html>
